@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{168CB14A-6B1E-4C86-B9C2-FFBA790C5AFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppEducaçãoDoFuturo</RootNamespace>
+    <AssemblyName>AppEducaçãoDoFuturo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ClassAcessoBD.cs" />
+    <Compile Include="Classes\ClassAluno.cs" />
+    <Compile Include="Classes\ClassCoordenadorCurso.cs" />
+    <Compile Include="Classes\ClassCurso.cs" />
+    <Compile Include="Classes\ClassDiretor.cs" />
+    <Compile Include="Classes\ClassFrequenciaAluno.cs" />
+    <Compile Include="Classes\ClassFrequenciaFunc.cs" />
+    <Compile Include="Classes\ClassFuncionario.cs" />
+    <Compile Include="Classes\ClassNota.cs" />
+    <Compile Include="Classes\ClassProfessor.cs" />
+    <Compile Include="Classes\ClassTurma.cs" />
+    <Compile Include="Classes\ClassFrequenciaProf.cs" />
+    <Compile Include="dbEducacaoDoFuturoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbEducacaoDoFuturoDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarFunc.Designer.cs">
+      <DependentUpon>frmCadastrarFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmEditarFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmEditarFunc.Designer.cs">
+      <DependentUpon>frmEditarFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirFunc.Designer.cs">
+      <DependentUpon>frmExcluirFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarCurso.Designer.cs">
+      <DependentUpon>frmCadastrarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmEditarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmEditarCurso.Designer.cs">
+      <DependentUpon>frmEditarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirCurso.Designer.cs">
+      <DependentUpon>frmExcluirCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmVerCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmVerCursos.Designer.cs">
+      <DependentUpon>frmVerCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmCadastrarProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmCadastrarProf.Designer.cs">
+      <DependentUpon>frmCadastrarProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmEditarProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmEditarProf.Designer.cs">
+      <DependentUpon>frmEditarProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmExcluirProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmExcluirProf.Designer.cs">
+      <DependentUpon>frmExcluirProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmVerProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmVerProf.Designer.cs">
+      <DependentUpon>frmVerProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmManterCoordenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmManterCoordenador.Designer.cs">
+      <DependentUpon>frmManterCoordenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarCoordenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarCoordenador.Designer.cs">
+      <DependentUpon>frmCadastrarCoordenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmEditarCoordenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmEditarCoordenador.Designer.cs">
+      <DependentUpon>frmEditarCoordenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirCoordenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirCoordenador.Designer.cs">
+      <DependentUpon>frmExcluirCoordenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarDiretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmCadastrarDiretor.Designer.cs">
+      <DependentUpon>frmCadastrarDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmEditarDiretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmEditarDiretor.Designer.cs">
+      <DependentUpon>frmEditarDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirDiretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmExcluirDiretor.Designer.cs">
+      <DependentUpon>frmExcluirDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmManterDiretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmManterDiretor.Designer.cs">
+      <DependentUpon>frmManterDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmInserirFrequenciaFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmInserirFrequenciaFunc.Designer.cs">
+      <DependentUpon>frmInserirFrequenciaFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmManterFrequencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmManterFrequencia.Designer.cs">
+      <DependentUpon>frmManterFrequencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmVerCoordenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmVerCoordenador.Designer.cs">
+      <DependentUpon>frmVerCoordenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmVerDiretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmVerDiretor.Designer.cs">
+      <DependentUpon>frmVerDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmVerFrequencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmVerFrequencia.Designer.cs">
+      <DependentUpon>frmVerFrequencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmInserirFrequenciaProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmInserirFrequenciaProf.Designer.cs">
+      <DependentUpon>frmInserirFrequenciaProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmManterFrequenciaProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmManterFrequenciaProf.Designer.cs">
+      <DependentUpon>frmManterFrequenciaProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmVerFrequenciaProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmVerFrequenciaProf.Designer.cs">
+      <DependentUpon>frmVerFrequenciaProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBoletim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBoletim.Designer.cs">
+      <DependentUpon>frmBoletim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCertificadoConclusao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCertificadoConclusao.Designer.cs">
+      <DependentUpon>frmCertificadoConclusao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCertificadoMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCertificadoMatricula.Designer.cs">
+      <DependentUpon>frmCertificadoMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFrequenciaFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFrequenciaFuncionario.Designer.cs">
+      <DependentUpon>frmFrequenciaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFrequenciaProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFrequenciaProfessor.Designer.cs">
+      <DependentUpon>frmFrequenciaProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelatorioAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioAluno.Designer.cs">
+      <DependentUpon>frmRelatorioAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Professor\frmEditarNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Professor\frmEditarNota.Designer.cs">
+      <DependentUpon>frmEditarNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Professor\frmInserirNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Professor\frmInserirNota.Designer.cs">
+      <DependentUpon>frmInserirNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Professor\frmManterNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Professor\frmManterNota.Designer.cs">
+      <DependentUpon>frmManterNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Professor\frmInserirFrequenciaAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Professor\frmInserirFrequenciaAluno.Designer.cs">
+      <DependentUpon>frmInserirFrequenciaAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Professor\frmManterFrequenciaAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Professor\frmManterFrequenciaAluno.Designer.cs">
+      <DependentUpon>frmManterFrequenciaAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Professor\frmVerFrequenciaAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Professor\frmVerFrequenciaAluno.Designer.cs">
+      <DependentUpon>frmVerFrequenciaAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmEditarTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmEditarTurma.Designer.cs">
+      <DependentUpon>frmEditarTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmExcluirTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmExcluirTurma.Designer.cs">
+      <DependentUpon>frmExcluirTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmTurmaCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmTurmaCadastrar.Designer.cs">
+      <DependentUpon>frmTurmaCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmVerTurmas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmVerTurmas.Designer.cs">
+      <DependentUpon>frmVerTurmas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmCadastrarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmCadastrarAluno.Designer.cs">
+      <DependentUpon>frmCadastrarAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmEditarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmEditarAluno.Designer.cs">
+      <DependentUpon>frmEditarAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmExcluirAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmExcluirAluno.Designer.cs">
+      <DependentUpon>frmExcluirAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmVerAlunos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmVerAlunos.Designer.cs">
+      <DependentUpon>frmVerAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLoginCoordenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLoginCoordenador.Designer.cs">
+      <DependentUpon>frmLoginCoordenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLoginProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLoginProf.Designer.cs">
+      <DependentUpon>frmLoginProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLoginSecretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLoginSecretaria.Designer.cs">
+      <DependentUpon>frmLoginSecretaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmManterAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmManterAluno.Designer.cs">
+      <DependentUpon>frmManterAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmManterCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmManterCurso.Designer.cs">
+      <DependentUpon>frmManterCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmManterFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmManterFunc.Designer.cs">
+      <DependentUpon>frmManterFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordenador\frmManterProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordenador\frmManterProf.Designer.cs">
+      <DependentUpon>frmManterProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria\frmManterTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\frmManterTurma.Designer.cs">
+      <DependentUpon>frmManterTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\frmMenuCoordenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\frmMenuCoordenador.Designer.cs">
+      <DependentUpon>frmMenuCoordenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\frmMenuDiretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\frmMenuDiretor.Designer.cs">
+      <DependentUpon>frmMenuDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\frmEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\frmEntrada.Designer.cs">
+      <DependentUpon>frmEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLoginDiretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLoginDiretor.Designer.cs">
+      <DependentUpon>frmLoginDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\frmMenuProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\frmMenuProf.Designer.cs">
+      <DependentUpon>frmMenuProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\frmMenuSecretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\frmMenuSecretaria.Designer.cs">
+      <DependentUpon>frmMenuSecretaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diretor\frmVerFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diretor\frmVerFunc.Designer.cs">
+      <DependentUpon>frmVerFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Diretor\frmCadastrarFunc.resx">
+      <DependentUpon>frmCadastrarFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmEditarFunc.resx">
+      <DependentUpon>frmEditarFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmExcluirFunc.resx">
+      <DependentUpon>frmExcluirFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmCadastrarCurso.resx">
+      <DependentUpon>frmCadastrarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmEditarCurso.resx">
+      <DependentUpon>frmEditarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmExcluirCurso.resx">
+      <DependentUpon>frmExcluirCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmVerCursos.resx">
+      <DependentUpon>frmVerCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmCadastrarProf.resx">
+      <DependentUpon>frmCadastrarProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmEditarProf.resx">
+      <DependentUpon>frmEditarProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmExcluirProf.resx">
+      <DependentUpon>frmExcluirProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmVerProf.resx">
+      <DependentUpon>frmVerProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmManterCoordenador.resx">
+      <DependentUpon>frmManterCoordenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmCadastrarCoordenador.resx">
+      <DependentUpon>frmCadastrarCoordenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmEditarCoordenador.resx">
+      <DependentUpon>frmEditarCoordenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmExcluirCoordenador.resx">
+      <DependentUpon>frmExcluirCoordenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmCadastrarDiretor.resx">
+      <DependentUpon>frmCadastrarDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmEditarDiretor.resx">
+      <DependentUpon>frmEditarDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmExcluirDiretor.resx">
+      <DependentUpon>frmExcluirDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmManterDiretor.resx">
+      <DependentUpon>frmManterDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmInserirFrequenciaFunc.resx">
+      <DependentUpon>frmInserirFrequenciaFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmManterFrequencia.resx">
+      <DependentUpon>frmManterFrequencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmVerCoordenador.resx">
+      <DependentUpon>frmVerCoordenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmVerDiretor.resx">
+      <DependentUpon>frmVerDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmVerFrequencia.resx">
+      <DependentUpon>frmVerFrequencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmInserirFrequenciaProf.resx">
+      <DependentUpon>frmInserirFrequenciaProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmManterFrequenciaProf.resx">
+      <DependentUpon>frmManterFrequenciaProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmVerFrequenciaProf.resx">
+      <DependentUpon>frmVerFrequenciaProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBoletim.resx">
+      <DependentUpon>frmBoletim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCertificadoConclusao.resx">
+      <DependentUpon>frmCertificadoConclusao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCertificadoMatricula.resx">
+      <DependentUpon>frmCertificadoMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFrequenciaFuncionario.resx">
+      <DependentUpon>frmFrequenciaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFrequenciaProfessor.resx">
+      <DependentUpon>frmFrequenciaProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioAluno.resx">
+      <DependentUpon>frmRelatorioAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Professor\frmEditarNota.resx">
+      <DependentUpon>frmEditarNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Professor\frmInserirNota.resx">
+      <DependentUpon>frmInserirNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Professor\frmManterNota.resx">
+      <DependentUpon>frmManterNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Professor\frmInserirFrequenciaAluno.resx">
+      <DependentUpon>frmInserirFrequenciaAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Professor\frmManterFrequenciaAluno.resx">
+      <DependentUpon>frmManterFrequenciaAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Professor\frmVerFrequenciaAluno.resx">
+      <DependentUpon>frmVerFrequenciaAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportAluno.rdlc" />
+    <EmbeddedResource Include="ReportBoletim.rdlc" />
+    <EmbeddedResource Include="ReportConclusao.rdlc" />
+    <EmbeddedResource Include="ReportFuncionario.rdlc" />
+    <EmbeddedResource Include="ReportMatricula.rdlc" />
+    <EmbeddedResource Include="ReportProfessor.rdlc" />
+    <EmbeddedResource Include="Secretaria\frmEditarTurma.resx">
+      <DependentUpon>frmEditarTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmExcluirTurma.resx">
+      <DependentUpon>frmExcluirTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmTurmaCadastrar.resx">
+      <DependentUpon>frmTurmaCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmVerTurmas.resx">
+      <DependentUpon>frmVerTurmas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmCadastrarAluno.resx">
+      <DependentUpon>frmCadastrarAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmEditarAluno.resx">
+      <DependentUpon>frmEditarAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmExcluirAluno.resx">
+      <DependentUpon>frmExcluirAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmVerAlunos.resx">
+      <DependentUpon>frmVerAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLoginCoordenador.resx">
+      <DependentUpon>frmLoginCoordenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLoginProf.resx">
+      <DependentUpon>frmLoginProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLoginSecretaria.resx">
+      <DependentUpon>frmLoginSecretaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmManterAluno.resx">
+      <DependentUpon>frmManterAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmManterCurso.resx">
+      <DependentUpon>frmManterCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmManterFunc.resx">
+      <DependentUpon>frmManterFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordenador\frmManterProf.resx">
+      <DependentUpon>frmManterProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\frmManterTurma.resx">
+      <DependentUpon>frmManterTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\frmMenuCoordenador.resx">
+      <DependentUpon>frmMenuCoordenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\frmMenuDiretor.resx">
+      <DependentUpon>frmMenuDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\frmEntrada.resx">
+      <DependentUpon>frmEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLoginDiretor.resx">
+      <DependentUpon>frmLoginDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\frmMenuProf.resx">
+      <DependentUpon>frmMenuProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\frmMenuSecretaria.resx">
+      <DependentUpon>frmMenuSecretaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diretor\frmVerFunc.resx">
+      <DependentUpon>frmVerFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="dbEducacaoDoFuturoDataSet1.xsc">
+      <DependentUpon>dbEducacaoDoFuturoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbEducacaoDoFuturoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbEducacaoDoFuturoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbEducacaoDoFuturoDataSet1.xss">
+      <DependentUpon>dbEducacaoDoFuturoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
